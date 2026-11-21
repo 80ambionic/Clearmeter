@@ -17,7 +17,7 @@ body{margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:col
 button,select,input{font:inherit;color:inherit}
 .top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:14px max(3vw,14px);border-bottom:1px solid var(--line)}
 .brand{font:600 22px/1 'Space Grotesk',sans-serif;letter-spacing:-.01em;margin-right:auto;display:flex;align-items:center;gap:10px}
-.brand svg{width:26px;height:26px}
+.brand svg{width:30px;height:30px;flex:none}
 .seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
 .seg button,.btn{border:0;background:transparent;padding:0 14px;min-height:44px;cursor:pointer;font-size:15px;font-weight:500}
 .seg button+button{border-left:1px solid var(--line)}
@@ -85,7 +85,14 @@ body.docked .chips,body.docked .note,body.docked .status:empty,body.docked .shee
 @media(prefers-reduced-motion:reduce){.corr b{transition:none}}
 </style></head><body>
 <div class="top">
-  <div class="brand"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="2" y="12" width="4" height="12" rx="2" fill="currentColor"/><rect x="8" y="6" width="4" height="18" rx="2" fill="currentColor"/><rect x="14" y="2" width="4" height="22" rx="2" fill="var(--acc)"/><rect x="20" y="9" width="4" height="15" rx="2" fill="currentColor"/></svg>Clearmeter</div>
+  <div class="brand"><svg viewBox="100 100 824 824" aria-hidden="true"><defs><linearGradient id="cm-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c3a4c"/><stop offset="1" stop-color="#06222e"/></linearGradient>
+<linearGradient id="cm-sp" x1="220" y1="0" x2="804" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38c3ee"/><stop offset=".55" stop-color="#8fd9f0"/><stop offset="1" stop-color="#ff2e7e"/></linearGradient>
+<linearGradient id="cm-fade" x1="0" y1="330" x2="0" y2="720" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+<mask id="cm-m"><rect width="1024" height="1024" fill="url(#cm-fade)"/></mask></defs>
+<rect x="100" y="100" width="824" height="824" rx="186" fill="url(#cm-bg)"/><path d="M220,720 C285,720 300,560 360,560 C420,560 430,640 480,640 C545,640 545,390 610,390 C680,390 690,610 740,640 C770,658 790,670 804,672 L804,720 Z" fill="url(#cm-sp)" opacity=".28"/>
+<path d="M220,720 C285,720 300,560 360,560 C420,560 430,640 480,640 C545,640 545,390 610,390 C680,390 690,610 740,640 C770,658 790,670 804,672" fill="none" stroke="url(#cm-sp)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="550" y="282" width="120" height="40" rx="20" fill="#ff2e7e"/>
+</svg>Clearmeter</div>
   <div class="seg" role="group" aria-label="Source">
     <button id="sSys" aria-pressed="false">System audio</button>
     <button id="sDev" aria-pressed="false">Input device</button>

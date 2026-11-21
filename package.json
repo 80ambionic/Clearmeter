@@ -1,0 +1,39 @@
+{
+  "name": "clearmeter",
+  "productName": "Clearmeter",
+  "version": "0.1.0",
+  "description": "A clean, resizable audio metering app: spectrum, loudness, waveform, stereo, spectrogram, oscilloscope and VU.",
+  "main": "main.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "45.4.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "app.clearmeter.desktop",
+    "productName": "Clearmeter",
+    "files": ["main.js", "preload.js", "renderer/**/*"],
+    "directories": { "buildResources": "build", "output": "dist" },
+    "mac": {
+      "target": [{ "target": "dmg", "arch": ["universal"] }],
+      "category": "public.app-category.music",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "extendInfo": {
+        "NSAudioCaptureUsageDescription": "Clearmeter meters the audio your Mac is playing.",
+        "NSMicrophoneUsageDescription": "Clearmeter meters audio from the input you choose.",
+        "NSScreenCaptureUsageDescription": "macOS routes system audio capture through screen recording. Clearmeter only uses the audio."
+      }
+    },
+    "win": { "target": [{ "target": "nsis", "arch": ["x64", "arm64"] }, { "target": "portable", "arch": ["x64"] }] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "linux": { "target": ["AppImage"], "category": "Audio" }
+  }
+}

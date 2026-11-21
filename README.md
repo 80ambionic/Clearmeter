@@ -20,7 +20,7 @@ Build on the system you're targeting. Each platform builds its own installer.
 | macOS (Intel + Apple Silicon) | `npm run dist:mac` | `Clearmeter-0.1.0-universal.dmg` |
 | Windows (x64 + ARM) | `npm run dist:win` | `Clearmeter Setup 0.1.0.exe` and a portable `.exe` |
 
-Or let GitHub build them. Every push to `main` runs the **Build Clearmeter** workflow, which builds both platforms and attaches the installers to the run (Actions tab › the run › Artifacts). To publish a release with download links, create a release on GitHub with a new tag like `v0.1.0`, or push that tag. The workflow then adds the installers to the release.
+Or let GitHub build them. Every push to `main` runs the **Build Clearmeter** workflow, which builds both platforms and attaches the installers to the run (Actions tab › the run › Artifacts). To publish a release with download links, open Releases › Draft a new release on GitHub, create a tag like `v0.1.0` and publish it. The workflow builds both platforms and adds the installers to that release.
 
 ## Sources
 
